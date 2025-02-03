@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb and Prefix Combiner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verb and Prefix Combiner</h1>
+        
+        <!-- Dropdown for Prefix -->
+        <label for="prefix">Select a Prefix:</label>
+        <select id="prefix">
+            <option value="Fjord">Fjord-</option>
+            <option value="Flicker">Flicker-</option>
+            <option value="Void">Void-</option>
+            <option value="Blaze">Blaze-</option>
+        </select>
+
+        <!-- Dropdown for Verb -->
+        <label for="verb">Select a Verb:</label>
+        <select id="verb">
+            <option value="Gorping">Gorping</option>
+            <option value="Glinking">Glinking</option>
+            <option value="Blimping">Blimping</option>
+            <option value="Figging">Figging</option>
+            <option value="Feltching">Feltching</option>
+            <option value="Shrimping">Shrimping</option>
+            <option value="Edging">Edging</option>
+            <option value="Gooning">Gooning</option>
+            <option value="Jelqing">Jelqing</option>
+        </select>
+
+        <!-- Button to Combine -->
+        <button onclick="combine()">Combine</button>
+
+        <!-- Result Display -->
+        <div class="result" id="result">
+            <strong>Definition:</strong> <span id="definition"></span>
+        </div>
+    </div>
+
+    <script>
+        // Database of definitions
+        const definitions = {
+            "FjordGlinking": "The process of freezing you penis, typically in liquid nitrogen, for more effective bludgeoning.",
+            "FlickerGlinking": "Killing someone by blunt force with your penis over an extended period of time, on and off",
+            "VoidGlinking": "Making the end of the penis sharp (potentially through figging) to complete the murder by penetration instead of blunt force trauma.",
+            "BlazeGlinking": "Setting the penis ablaze before or whilst killing the victim.",
+            "FjordGorping": "Having intercorse with a cryofrozen pregnant individual",
+            "FlickerGorping": "Having intercorse with a deceased pregnant woman for an extended period of time, on and off",
+            "VoidGorping": "The special case of killing the pregnant women right before childbirth to engage in fetus-focused intercourse, more so than the dead woman.",
+            "BlazeGorping": "A sort of challenge where the dead woman is set on fire, and the blazegorper must complete their process before the body is completely reduced to ashes.",
+            "FjordBlimping": "Spitting ice cold water up someones rectum",
+            "FlickerBlimping": "Forcefully blowing air up someones anus for an extended period of time, on and off.",
+            "VoidBlimping": "Expanding the anus to its limit and inserting a large portion of the head when performing the action.",
+            "BlazeBlimping": "Inserting extremely hot, volatile, or flaming objects into one's anus.",
+            "FjordFigging": "Inserting an ice cold needle into one's urethra for added excitement and pleasure.",
+            "FlickerFigging": "Constantly pulling a long object in and out of the urethra for several hours without stopping.",
+            "VoidFigging": "The needle that is inserted into the urethra is much longer, often used with voidglinking.",
+            "BlazeFigging": "Inserting a very hot needle into ones eurethra for increased feeling and pleasure.",
+            "FjordFeltching": "Sucking frozen semen out of someones anus",
+            "FlickerFeltching": "The anus must be constantly replenished with seamen over several hours to sustain the prolonged feltching.",
+            "VoidFeltching": "Expanding the anus to its limit and inserting a large portion of the head when performing the action.",
+            "BlazeFeltching": "Pouring very intense hot sauce or similar condiment into the anus for a burning sensation felt by both partners.",
+            "FjordShrimping": "Freezing the toes to the point of extreme frosbite, removing them, and then suck on or consume them, similar to a popsicle or chicken nuggets.",
+            "FlickerShrimping": "Sucking the toes for hours on end, in rapid on and off strokes.",
+            "VoidShrimping": "Completely removing the entire nail from the toes prior to sucking them.",
+            "BlazeShrimping": "Dipping the toes in some kind of lighting fluid and setting the toes on fire, then sucking them for pleasure.",
+            "FlickerEdging": "edging rapidly for an extremely long time without pausing.",
+            "FjordEdging": "edging with a cold and flacid penis, adding a challenge as it is difficult to remain erect.",
+            "VoidEdging": "pulling back the foreskin or shaftskin as far as possible whilst edging.",
+            "BlazeEdging": "setting the penis ablaze while edging.",
+            "FlickerGooning": "gooning rapidly for an extremely long time without pausing.",
+            "FjordGooning": "gooning with a cold and flacid penis, adding a challenge as it is difficult to remain erect.",
+            "VoidGooning": "achieving the goon-state or performing the action of gooning via means other than using your own hands (Ex: a device of some sort).",
+            "BlazeGooning": "setting the penis ablaze while gooning.",
+            "FlickerJelqing": "jelqing rapidly for an extremely long time without pausing.",
+            "FjordJelqing": "freezing the penis (often with liquid nitrogen) after jelqing the maintain the post-jelq state for enhanced growth.",
+            "VoidJelqing": "the process of removing parts of your own or other penises to attach onto the end of the penis, to increase its length.",
+            "BlazeJelqing": "setting the penis ablaze while jelqing."
+        };
+
+        // Function to combine prefix and verb
+        function combine() {
+            const prefix = document.getElementById('prefix').value;
+            const verb = document.getElementById('verb').value;
+            const combinedWord = prefix + verb;
+
+            // Get the definition from the database
+            const definition = definitions[combinedWord] || "No definition found.";
+
+            // Display the result
+            document.getElementById('definition').textContent = definition;
+        }
+    </script>
+</body>
+</html>
